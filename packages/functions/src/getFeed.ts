@@ -29,6 +29,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       ExpressionAttributeNames: { '#name': 'name' },
       ExpressionAttributeValues: { ':name': input.data.name },
       ScanIndexForward: !input.data.forward,
+      ConsistentRead: true,
    }
 
    if (input.data.cursor) {
