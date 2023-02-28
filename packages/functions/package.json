@@ -1,17 +1,19 @@
 {
-  "name": "@realtime-feed/functions",
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "test": "sst bind 'vitest'",
-    "typecheck": "tsc -noEmit"
-  },
-  "devDependencies": {
-    "@types/node": "^18.14.2",
-    "@types/aws-lambda": "^8.10.111",
-    "sst": "^2.0.39"
-  },
-  "dependencies": {
-    "sst": "^2.0.39"
-  }
+   "name": "@realtime-feed/functions",
+   "version": "0.0.0",
+   "type": "module",
+   "scripts": {
+      "test": "sst bind 'vitest'",
+      "typecheck": "tsc -noEmit"
+   },
+   "devDependencies": {
+      "@types/aws-lambda": "^8.10.111",
+      "@types/node": "^18.14.2",
+      "aws-sdk": "^2.1323.0",
+      "sst": "^2.0.39"
+   },
+   "dependencies": {
+      "@aws-sdk/util-dynamodb": "^3.279.0",
+      "sst": "^2.0.39"
+   }
 }

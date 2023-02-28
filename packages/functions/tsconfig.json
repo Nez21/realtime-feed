@@ -1,10 +1,10 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
-  "compilerOptions": {
-    "module": "esnext",
-    "baseUrl": ".",
-    "paths": {
-      "@realtime-feed/core/*": ["../core/src/*"]
-    }
-  }
+   "extends": "@tsconfig/node16/tsconfig.json",
+   "compilerOptions": {
+      "module": "esnext",
+      "baseUrl": ".",
+      "paths": {
+         "@realtime-feed/core/*": ["../core/src/*"]
+      }
+   }
 }
