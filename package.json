@@ -9,7 +9,7 @@
       "deploy": "sst deploy",
       "remove": "sst remove",
       "console": "sst console",
-      "typecheck": "tsc --noEmit"
+      "typecheck": "yarn workspaces run typecheck"
    },
    "devDependencies": {
       "sst": "^2.0.39",
