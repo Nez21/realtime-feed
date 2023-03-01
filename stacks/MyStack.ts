@@ -1,6 +1,4 @@
 import { Duration } from 'aws-cdk-lib'
-import { HttpIntegration } from 'aws-cdk-lib/aws-apigateway'
-import { BillingMode } from 'aws-cdk-lib/aws-dynamodb'
 import { StartingPosition } from 'aws-cdk-lib/aws-lambda'
 import { StackContext, Api, StaticSite, Table, WebSocketApi, Queue } from 'sst/constructs'
 
@@ -129,8 +127,8 @@ export function MyStack({ stack }: StackContext) {
       buildCommand: 'yarn build',
       buildOutput: 'dist',
       environment: {
-         VUE_APP_API_URL: api.url,
-         VUE_APP_WS_URL: ws.url,
+         VITE_API_URL: api.url,
+         VITE_WS_URL: ws.url,
       },
    })
 

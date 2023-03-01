@@ -1,11 +1,11 @@
 import { Feed } from '@realtime-feed/core/feed'
 import { APIGatewayProxyHandler } from 'aws-lambda'
-import { DynamoDB, SQS } from 'aws-sdk'
+import { DynamoDB } from 'aws-sdk'
 import { Table } from 'sst/node/table'
 
 const dynamoDb = new DynamoDB.DocumentClient()
 
-export const handler: APIGatewayProxyHandler = async (event) => {
+export const handler: APIGatewayProxyHandler = async (_) => {
    const items: Feed[] = []
    const params: DynamoDB.DocumentClient.ScanInput = {
       TableName: Table.Feed.tableName,

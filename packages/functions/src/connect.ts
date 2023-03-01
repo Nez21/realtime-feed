@@ -1,11 +1,11 @@
 import { DynamoDB } from 'aws-sdk'
-import { APIGatewayProxyHandler } from 'aws-lambda'
+import { APIGatewayProxyWebsocketHandlerV2 } from 'aws-lambda'
 import { Table } from 'sst/node/table'
 
 const dynamoDb = new DynamoDB.DocumentClient()
 
-export const handler: APIGatewayProxyHandler = async (event) => {
-   const params = {
+export const handler: APIGatewayProxyWebsocketHandlerV2<void> = async (event) => {
+   const params: DynamoDB.DocumentClient.PutItemInput = {
       TableName: Table.Connections.tableName,
       Item: {
          id: event.requestContext.connectionId,
@@ -13,6 +13,4 @@ export const handler: APIGatewayProxyHandler = async (event) => {
    }
 
    await dynamoDb.put(params).promise()
-
-   return { statusCode: 200, body: 'Connected' }
 }

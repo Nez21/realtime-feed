@@ -11,4 +11,5 @@ node_modules
 # local env files
 .env*.local
 
+# local history
 .history
